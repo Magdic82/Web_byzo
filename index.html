@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="cs">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Byzo | Jednoduchý software pro řemeslníky | Faktury a nabídky</title>
+    <meta name="description"
+        content="Byzo je jednoduchý software pro řemeslníky, který udělá papírování za vás. Vytvářejte nabídky, vystavujte faktury a získejte až 4 dny měsíčně navíc.">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/jpeg" href="Fotky/favicon_byzo.jpg">
+
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="site-header">
+        <div class="container header-container">
+            <a href="index.html" class="logo-link">
+                <img src="Fotky/logo_byzo.jpg" alt="Byzo Logo" class="logo-img">
+            </a>
+
+            <nav class="main-nav">
+                <ul class="nav-list">
+                    <li><a href="index.html" class="nav-link active">Domů</a></li>
+                    <li><a href="funkce.html" class="nav-link">Funkce</a></li>
+                    <li><a href="priklad-z-praxe.html" class="nav-link">Příklad z praxe</a></li>
+                    <li><a href="cenik.html" class="nav-link">Ceník</a></li>
+                    <li><a href="jak-zacit.html" class="nav-link">Jak začít</a></li>
+                    <li><a href="caste-dotazy.html" class="nav-link">Časté dotazy</a></li>
+                    <li><a href="o-nas.html" class="nav-link">O nás</a></li>
+                    <li><a href="kontakt.html" class="nav-link btn-nav">Kontakt</a></li>
+                </ul>
+            </nav>
+
+            <button class="mobile-menu-btn" aria-label="Otevřít menu" aria-expanded="false">
+                <i class="bi bi-list"></i>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="container hero-container">
+                <div class="hero-content">
+                    <h1 class="homepage-h1">Jednoduchý software pro&nbsp;<span class="text-highlight">řemeslníky</span>
+                    </h1>
+                    <p class="hero-subtitle">Udělá papíry za vás. Větší výdělek pro&nbsp;vás.</p>
+                    <div class="hero-actions">
+                        <a href="funkce.html" class="btn btn-primary">Co Byzo umí?</a>
+                    </div>
+                </div>
+                <div class="hero-image-wrapper">
+                    <img src="Fotky/remeslnici/remeslnik_byzo5.jpg" alt="Řemeslník používající Byzo" class="hero-img">
+
+                    <!-- Floating Bubbles -->
+                    <div class="bubble bubble-1">
+                        <i class="bi bi-person-plus-fill"></i>
+                        <span>Založí zákazníka</span>
+                    </div>
+                    <div class="bubble bubble-2">
+                        <i class="bi bi-file-earmark-medical-fill"></i>
+                        <span>Vytvoří nabídku</span>
+                    </div>
+                    <div class="bubble bubble-3">
+                        <i class="bi bi-check-circle-fill"></i>
+                        <span>Kontroluje platby</span>
+                    </div>
+                    <div class="bubble bubble-4">
+                        <i class="bi bi-box-seam-fill"></i>
+                        <span>Hlídá zásoby ve skladu</span>
+                    </div>
+                    <div class="bubble bubble-5">
+                        <i class="bi bi-receipt"></i>
+                        <span>Vystaví fakturu</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section id="co-umi" class="features-section">
+            <div class="container">
+                <!-- Section Header removed as requested, content moved to first card -->
+
+                <div class="features-grid">
+                    <!-- New First Box -->
+                    <div class="feature-card">
+                        <div class="icon-box">
+                            <i class="bi bi-briefcase"></i>
+                        </div>
+                        <h3>Pomáhá u celé zakázky</h3>
+                        <p>Byzo založí klienta, sestaví pro něj nabídku i vystaví fakturu.</p>
+                    </div>
+
+                    <!-- Existing Second Box -->
+                    <div class="feature-card">
+                        <div class="icon-box">
+                            <i class="bi bi-currency-exchange"></i>
+                        </div>
+                        <h3>Vkládá ceny do&nbsp;nabídky</h3>
+                        <p>Byzo automaticky vkládá a aktualizuje ceny od&nbsp;vašich dodavatelů.</p>
+                    </div>
+
+                    <!-- Existing Third Box -->
+                    <div class="feature-card">
+                        <div class="icon-box">
+                            <i class="bi bi-hourglass-split"></i>
+                        </div>
+                        <h3>Získáte čas navíc</h3>
+                        <p>Používání softwaru Byzo vám dá čas navíc (2&ndash;4 dny za&nbsp;měsíc).</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Process Section -->
+        <section class="process-section">
+            <div class="container">
+                <div class="process-header">
+                    <span class="process-label">NÁŠ PROCES</span>
+                    <h2>Jak Byzo funguje</h2>
+                </div>
+                <div class="process-steps">
+                    <div class="process-step">
+                        <div class="process-icon">
+                            <i class="bi bi-person-plus"></i>
+                        </div>
+                        <h3>Založíte zákazníka</h3>
+                        <p>Jednoduše přidáte nového klienta do systému.</p>
+                    </div>
+                    <div class="process-line"></div>
+                    <div class="process-step">
+                        <div class="process-icon">
+                            <i class="bi bi-file-earmark-text"></i>
+                        </div>
+                        <h3>Vytvoříte nabídku</h3>
+                        <p>Ze šablon sestavíte nabídku během minut.</p>
+                    </div>
+                    <div class="process-line"></div>
+                    <div class="process-step">
+                        <div class="process-icon">
+                            <i class="bi bi-credit-card"></i>
+                        </div>
+                        <h3>Vystavíte fakturu</h3>
+                        <p>Jedním klikem z nabídky vytvoříte fakturu.</p>
+                    </div>
+                    <div class="process-line"></div>
+                    <div class="process-step">
+                        <div class="process-icon">
+                            <i class="bi bi-check-circle"></i>
+                        </div>
+                        <h3>Kontrolujete platbu</h3>
+                        <p>Vidíte, kdo zaplatil a na koho platbu ještě čekáte.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Target Audience Section -->
+        <section class="audience-section">
+            <div class="container">
+                <div class="audience-content">
+                    <h2>Pro koho je software Byzo určený?</h2>
+                    <p>Nástroj je určený pro řemeslníky, ať už jsou to elektrikáři, instalatéři, zedníci, pokrývači,
+                        klempíři, malíři, truhláři, tesaři a ostatní řemeslníci, kteří potřebují zautomatizovat
+                        administrativu spojenou se svou živností.</p>
+                </div>
+
+                <div class="audience-gallery">
+                    <img src="Fotky/remeslnici/remeslnik_byzo1.jpg" alt="Řemeslník v akci" class="audience-img" loading="lazy">
+                    <img src="Fotky/remeslnici/remeslnik_byzo2.jpg" alt="Montážní práce" class="audience-img" loading="lazy">
+                    <img src="Fotky/remeslnici/remeslnik_byzo3.jpg" alt="Práce se dřevem" class="audience-img" loading="lazy">
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta-section">
+            <div class="container">
+                <div class="cta-content">
+                    <h2>Začněte šetřit čas ještě dnes</h2>
+                    <p>Vyzkoušejte Byzo a zjistěte, jak vám může usnadnit práci.</p>
+                    <a href="kontakt.html" class="btn btn-primary">Objednat konzultaci zdarma</a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container footer-container">
+            <div class="footer-cta">
+                <h3>Objednat si schůzku online</h3>
+                <p class="highlight">30 minut zdarma</p>
+                <a href="https://calendly.com/" target="_blank" class="btn btn-secondary">Rezervovat termín <i
+                        class="bi bi-calendar-check"></i></a>
+            </div>
+
+            <div class="footer-contacts">
+                <h3>Kontakty</h3>
+                <ul class="contact-list">
+                    <li>
+                        <span class="label">Obchod:</span>
+                        <a href="mailto:filip.jokes@byzo.cz">filip.jokes@byzo.cz</a>
+                    </li>
+                    <li>
+                        <span class="label">Podpora:</span>
+                        <a href="mailto:info@byzo.cz">info@byzo.cz</a> <span class="note">(odpovídáme do 24 hod.)</span>
+                    </li>
+                    <li>
+                        <span class="label">Telefon:</span>
+                        <a href="tel:+420606652000">+420 606 652 000</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom text-center">
+            <p>&copy; 2026 Byzo s.r.o. | Vytvořeno s důrazem na řemeslo.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

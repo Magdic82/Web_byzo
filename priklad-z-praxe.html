@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="cs">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Příklad z praxe | Jak probíhá zakázka v Byzo?</title>
+    <meta name="description"
+        content="Podívejte se, jak vypadá reálná zakázka v systému Byzo. Uvidíte celý proces od poptávky až po kontrolu zaplacení faktury krok za krokem.">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/jpeg" href="Fotky/favicon_byzo.jpg">
+
+    <style>
+        .timeline {
+            position: relative;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem 0;
+        }
+
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 4px;
+            background-color: var(--color-secondary);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -2px;
+            border-radius: 2px;
+        }
+
+        .timeline-item {
+            padding: 10px 40px;
+            position: relative;
+            background-color: inherit;
+            width: 50%;
+            margin-bottom: 3rem;
+            box-sizing: border-box;
+        }
+
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 24px;
+            height: 24px;
+            right: -12px;
+            background-color: white;
+            border: 4px solid var(--color-btn);
+            top: 24px;
+            border-radius: 50%;
+            z-index: 1;
+        }
+
+        .left {
+            left: 0;
+        }
+
+        .right {
+            left: 50%;
+        }
+
+        .left::before {
+            content: " ";
+            height: 0;
+            position: absolute;
+            top: 26px;
+            width: 0;
+            z-index: 1;
+            right: 30px;
+            border: medium solid white;
+            border-width: 10px 0 10px 10px;
+            border-color: transparent transparent transparent white;
+        }
+
+        .right::before {
+            content: " ";
+            height: 0;
+            position: absolute;
+            top: 26px;
+            width: 0;
+            z-index: 1;
+            left: 30px;
+            border: medium solid white;
+            border-width: 10px 10px 10px 0;
+            border-color: transparent white transparent transparent;
+        }
+
+        .right::after {
+            left: -12px;
+        }
+
+        .timeline-content {
+            padding: 30px;
+            background-color: white;
+            position: relative;
+            border-radius: 16px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            border: 1px solid var(--color-light-bg);
+        }
+
+        .time-badge {
+            display: inline-block;
+            background-color: var(--color-secondary);
+            color: var(--color-btn);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .step-img {
+            margin-top: 1rem;
+            border-radius: 12px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            border: 1px solid #eee;
+            width: 100%;
+            transition: transform 0.3s ease;
+            cursor: pointer;
+        }
+
+        .step-img:hover {
+            transform: scale(1.03);
+        }
+
+        .email-card {
+            background-color: #f8f9fa;
+            border-left: 5px solid var(--color-btn);
+            padding: 2rem;
+            border-radius: 8px;
+            margin-bottom: 4rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Mobile Responsive Timeline */
+        @media screen and (max-width: 768px) {
+            .timeline::after {
+                left: 31px;
+            }
+
+            .timeline-item {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+            }
+
+            .timeline-item::before {
+                left: 60px;
+                border: medium solid white;
+                border-width: 10px 10px 10px 0;
+                border-color: transparent white transparent transparent;
+            }
+
+            .left::after,
+            .right::after {
+                left: 19px;
+            }
+
+            .right {
+                left: 0%;
+            }
+
+            .left::before {
+                right: auto;
+                left: 60px;
+                border-width: 10px 10px 10px 0;
+                border-color: transparent white transparent transparent;
+            }
+
+            .email-card {
+                padding: 1.5rem 1rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="site-header">
+        <div class="container header-container">
+            <a href="index.html" class="logo-link">
+                <img src="Fotky/logo_byzo.jpg" alt="Byzo Logo" class="logo-img">
+            </a>
+
+            <nav class="main-nav">
+                <ul class="nav-list">
+                    <li><a href="index.html" class="nav-link">Domů</a></li>
+                    <li><a href="funkce.html" class="nav-link">Funkce</a></li>
+                    <li><a href="priklad-z-praxe.html" class="nav-link active">Příklad z praxe</a></li>
+                    <li><a href="cenik.html" class="nav-link">Ceník</a></li>
+                    <li><a href="jak-zacit.html" class="nav-link">Jak začít</a></li>
+                    <li><a href="caste-dotazy.html" class="nav-link">Časté dotazy</a></li>
+                    <li><a href="o-nas.html" class="nav-link">O nás</a></li>
+                    <li><a href="kontakt.html" class="nav-link btn-nav">Kontakt</a></li>
+                </ul>
+            </nav>
+
+            <button class="mobile-menu-btn" aria-label="Otevřít menu" aria-expanded="false">
+                <i class="bi bi-list"></i>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <!-- Page Header -->
+        <section class="hero-section" style="padding: 4rem 0 2rem 0; min-height: auto;">
+            <div class="container text-center">
+                <h1>Jak probíhá <span class="text-highlight">reálná zakázka?</span></h1>
+                <p class="hero-subtitle">Příklad paní Svobodové, která poptává výměnu elektroinstalace v domě 5+kk</p>
+            </div>
+        </section>
+
+        <section class="content-section" style="padding-bottom: 5rem; background-color: var(--color-light-bg);">
+            <div class="container">
+
+                <!-- Email / Poptávka -->
+                <div class="email-card">
+                    <div style="display: flex; gap: 1rem; align-items: center; margin-bottom: 1rem;">
+                        <i class="bi bi-envelope-paper" style="font-size: 2rem; color: var(--color-btn);"></i>
+                        <div>
+                            <h3 style="margin: 0; font-size: 1.2rem;">Poptávka od: Jana Svobodová</h3>
+                            <span style="font-size: 0.9rem; color: #666;">Předmět: Rekonstrukce elektroinstalace v domě</span>
+                        </div>
+                    </div>
+                    <div
+                        style="background: white; padding: 1.5rem; border-radius: 4px; border: 1px solid #eee; font-style: italic; color: #555;">
+                        <p>Dobrý den pane Novák,<br><br>
+                            V rodinném domě u Prahy 5kk o výměře 180 m<sup>2</sup>. Ráda bych při jeho
+                            rekonstrukci
+                            kompletně vyměnila elektroinstalaci, udělala přípravu jističe na klimatizaci a udělala i
+                            rozvod slaboproudu. Mohl byste mi prosím dát orientační nabídku?<br><br>
+                            Kompletaci předpokládám Unica bílá. Ostatní standardní vybavení. Předání prosím včetně
+                            revize.<br><br>
+                            Děkuji. <br>
+                            S pozdravem,<br>
+                            Jana Svobodová</p>
+                    </div>
+                </div>
+
+                <!-- Timeline -->
+                <div class="text-center" style="margin-bottom: 3rem;">
+                    <h2>Postup řemeslníka pana Nováka v Byzo</h2>
+                </div>
+
+                <div class="timeline">
+                    <!-- Step 1 -->
+                    <div class="timeline-item left">
+                        <div class="timeline-content">
+                            <span class="time-badge"><i class="bi bi-clock"></i> 3 minuty</span>
+                            <h3>1. Založení zákazníka</h3>
+                            <p>Pan Novák si jednoduše založí kartu nového klienta se všemi údaji.</p>
+                            <img src="Fotky/system/zalozeni_zakaznika.jpg" alt="Založení zákazníka v systému"
+                                class="step-img" loading="lazy">
+                        </div>
+                    </div>
+
+                    <!-- Step 2 -->
+                    <div class="timeline-item right">
+                        <div class="timeline-content">
+                            <span class="time-badge"><i class="bi bi-clock"></i> 5 minut</span>
+                            <h3>2. Výběr šablony a úprava</h3>
+                            <p>Použije šablonu "Elektroinstalace dům 5+kk<sup>2</sup>" a přidá položku pro přípravu na
+                                klimatizaci.</p>
+                            <img src="Fotky/system/vyber_sablony.jpg" alt="Výběr šablony" class="step-img" loading="lazy">
+                        </div>
+                    </div>
+
+                    <!-- Step 3 -->
+                    <div class="timeline-item left">
+                        <div class="timeline-content">
+                            <span class="time-badge"><i class="bi bi-clock"></i> 1 minuta</span>
+                            <h3>3. Odeslání nabídky</h3>
+                            <p>Profesionální nabídka v PDF se vygeneruje a odešle zákazníkovi přímo z aplikace.</p>
+                            <img src="Fotky/system/nabidka.jpg" alt="Nabídka v PDF" class="step-img" loading="lazy">
+                        </div>
+                    </div>
+
+                    <!-- Step 4 -->
+                    <div class="timeline-item right">
+                        <div class="timeline-content">
+                            <span class="time-badge"><i class="bi bi-clock"></i> 10 minut</span>
+                            <h3>4. Úprava nabídky</h3>
+                            <p>Úprava na základě upřesnění požadavku a klientských změn.</p>
+                        </div>
+                    </div>
+
+                    <!-- Step 5 -->
+                    <div class="timeline-item left">
+                        <div class="timeline-content">
+                            <span class="time-badge"><i class="bi bi-clock"></i> 3 minuty</span>
+                            <h3>5. Objednávka materiálu</h3>
+                            <p>Byzo připraví objednávku, zkontroluje ceny a připraví email do velkoobchodu.</p>
+                            <img src="Fotky/system/objdnavka_zbozi.jpg" alt="Objednávka zboží" class="step-img" loading="lazy">
+                        </div>
+                    </div>
+
+                    <!-- Step 6 -->
+                    <div class="timeline-item right">
+                        <div class="timeline-content">
+                            <span class="time-badge" style="background-color: #e2fbd7; color: #2d7a1c;"><i
+                                    class="bi bi-wrench"></i> Realizace</span>
+                            <h3>6. Vyhotovení zakázky</h3>
+                            <p>Pan Novák v klidu pracuje na zakázce, protože ví přesně, jaký má zisk na materiálu a
+                                práci.</p>
+                        </div>
+                    </div>
+
+                    <!-- Step 7 -->
+                    <div class="timeline-item left">
+                        <div class="timeline-content">
+                            <span class="time-badge"><i class="bi bi-clock"></i> 1 minuta</span>
+                            <h3>7. Vytvoření faktury</h3>
+                            <p>Jedním kliknutím vytvoří konečnou fakturu přímo z odsouhlasené nabídky.</p>
+                            <img src="Fotky/system/faktura.jpg" alt="Faktura" class="step-img" loading="lazy">
+                        </div>
+                    </div>
+
+                    <!-- Step 8 -->
+                    <div class="timeline-item right">
+                        <div class="timeline-content">
+                            <span class="time-badge"><i class="bi bi-clock"></i> 1 minuta</span>
+                            <h3>8. Kontrola platby</h3>
+                            <p>Systém hlídá splatnost a spáruje příchozí platbu.</p>
+                            <img src="Fotky/system/kontrola_uctu.jpg" alt="Kontrola účtu" class="step-img" loading="lazy">
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="text-center" style="margin-top: 4rem;">
+                    <a href="cenik.html" class="btn btn-primary">Chci vyzkoušet Byzo</a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container footer-container">
+            <div class="footer-cta">
+                <h3>Objednat si schůzku online</h3>
+                <p class="highlight">30 minut zdarma</p>
+                <a href="https://calendly.com/" target="_blank" class="btn btn-secondary">Rezervovat termín <i
+                        class="bi bi-calendar-check"></i></a>
+            </div>
+
+            <div class="footer-contacts">
+                <h3>Kontakty</h3>
+                <ul class="contact-list">
+                    <li>
+                        <span class="label">Obchod:</span>
+                        <a href="mailto:filip.jokes@byzo.cz">filip.jokes@byzo.cz</a>
+                    </li>
+                    <li>
+                        <span class="label">Podpora:</span>
+                        <a href="mailto:info@byzo.cz">info@byzo.cz</a> <span class="note">(odpovídáme do 24 hod.)</span>
+                    </li>
+                    <li>
+                        <span class="label">Telefon:</span>
+                        <a href="tel:+420606652000">+420 606 652 000</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom text-center">
+            <p>&copy; 2026 Byzo s.r.o. | Vytvořeno s důrazem na řemeslo.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

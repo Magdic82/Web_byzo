@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="cs">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontakt | Objednejte si konzultaci k Byzo zdarma</title>
+    <meta name="description"
+        content="Potřebujete poradit? Kontaktujte Filipa Jokeše, nebo si rezervujte 30 minut online konzultace k systému Byzo zcela zdarma.">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/jpeg" href="Fotky/favicon_byzo.jpg">
+
+    <style>
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 4rem;
+            align-items: start;
+            padding: 4rem 0 8rem 0;
+        }
+
+        .contact-info-card {
+            background: white;
+            padding: 3rem;
+            border-radius: 24px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
+            border: 1px solid #eee;
+        }
+
+        .profile-header {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            margin-bottom: 3rem;
+            background: var(--color-light-bg);
+            padding: 1.5rem;
+            border-radius: 20px;
+        }
+
+        .profile-img-small {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid white;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .profile-details h3 {
+            margin: 0;
+            color: var(--color-btn);
+            font-size: 1.6rem;
+            font-weight: 700;
+        }
+
+        .profile-details p {
+            margin: 0.2rem 0 0 0;
+            color: #666;
+            font-size: 1.1rem;
+        }
+
+        .contact-list-detailed {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .contact-item-box {
+            display: flex;
+            align-items: flex-start;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .contact-icon-box {
+            width: 50px;
+            height: 50px;
+            background: var(--color-secondary);
+            color: var(--color-btn);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 12px;
+            font-size: 1.4rem;
+            flex-shrink: 0;
+        }
+
+        .contact-item-box .label {
+            display: block;
+            font-size: 0.85rem;
+            color: #999;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.2rem;
+        }
+
+        .contact-item-box a,
+        .contact-item-box span.val {
+            font-size: 1.2rem;
+            color: var(--color-text);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        .contact-item-box a:hover {
+            color: var(--color-btn);
+        }
+
+        .company-legal {
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid #eee;
+            color: #777;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .calendly-booking-card {
+            background-color: var(--color-light-bg);
+            border: 2px dashed var(--color-primary);
+            border-radius: 24px;
+            padding: 3rem;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+        }
+
+        .calendly-booking-card h2 {
+            color: var(--color-btn);
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+            line-height: 1.2;
+        }
+
+        .calendly-badge {
+            background: var(--color-btn);
+            color: white;
+            padding: 0.5rem 1.5rem;
+            border-radius: 30px;
+            font-weight: 600;
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+            box-shadow: 0 5px 15px rgba(78, 64, 174, 0.3);
+        }
+
+        .calendly-booking-card p {
+            font-size: 1.1rem;
+            color: #555;
+            margin-bottom: 2.5rem;
+            max-width: 300px;
+        }
+
+        @media (max-width: 992px) {
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .calendly-booking-card {
+                padding: 2.5rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .profile-header {
+                flex-direction: column;
+                text-align: center;
+                gap: 1rem;
+            }
+        }
+    </style>
+    <!-- Structured Data (LocalBusiness) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Byzo s.r.o.",
+      "image": "https://byzo.cz/Fotky/logo_byzo.jpg",
+      "@id": "https://byzo.cz",
+      "url": "https://byzo.cz",
+      "telephone": "+420606652000",
+      "email": "info@info@byzo.cz",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Lýková 1160",
+        "addressLocality": "Kamenice",
+        "postalCode": "251 68",
+        "addressRegion": "Ládví",
+        "addressCountry": "CZ"
+      }
+    }
+    </script>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="site-header">
+        <div class="container header-container">
+            <a href="index.html" class="logo-link">
+                <img src="Fotky/logo_byzo.jpg" alt="Byzo Logo" class="logo-img">
+            </a>
+
+            <nav class="main-nav">
+                <ul class="nav-list">
+                    <li><a href="index.html" class="nav-link">Domů</a></li>
+                    <li><a href="funkce.html" class="nav-link">Funkce</a></li>
+                    <li><a href="priklad-z-praxe.html" class="nav-link">Příklad z praxe</a></li>
+                    <li><a href="cenik.html" class="nav-link">Ceník</a></li>
+                    <li><a href="jak-zacit.html" class="nav-link">Jak začít</a></li>
+                    <li><a href="caste-dotazy.html" class="nav-link">Časté dotazy</a></li>
+                    <li><a href="o-nas.html" class="nav-link">O nás</a></li>
+                    <li><a href="kontakt.html" class="nav-link btn-nav active">Kontakt</a></li>
+                </ul>
+            </nav>
+
+            <button class="mobile-menu-btn" aria-label="Otevřít menu" aria-expanded="false">
+                <i class="bi bi-list"></i>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <!-- Page Header -->
+        <section class="hero-section" style="padding: 4rem 0 2rem 0; min-height: auto;">
+            <div class="container text-center">
+                <h1>Jsme tu pro <span class="text-highlight">vás</span></h1>
+                <p class="hero-subtitle">Máte dotaz nebo potřebujete pomoci s nastavením?</p>
+            </div>
+        </section>
+
+        <!-- Contact Content -->
+        <section class="contact-section">
+            <div class="container">
+                <div class="contact-grid">
+
+                    <!-- Left: Contact Details & Founder -->
+                    <div class="contact-info-card">
+                        <div class="profile-header">
+                            <img src="Fotky/lide/filip_jokes.jpg" alt="Filip Jokeš" class="profile-img-small" loading="lazy">
+                            <div class="profile-details">
+                                <h3>Filip Jokeš</h3>
+                                <p>Obchodní a zákaznická podpora</p>
+                            </div>
+                        </div>
+
+                        <ul class="contact-list-detailed">
+                            <li class="contact-item-box">
+                                <div class="contact-icon-box">
+                                    <i class="bi bi-envelope-at"></i>
+                                </div>
+                                <div>
+                                    <span class="label">Obchodní dotazy</span>
+                                    <a href="mailto:filip.jokes@byzo.cz">filip.jokes@byzo.cz</a>
+                                </div>
+                            </li>
+                            <li class="contact-item-box">
+                                <div class="contact-icon-box">
+                                    <i class="bi bi-headset"></i>
+                                </div>
+                                <div>
+                                    <span class="label">Technická podpora</span>
+                                    <a href="mailto:info@byzo.cz">info@byzo.cz</a>
+                                    <small style="display:block; color:#999; margin-top:2px;">(odpovídáme do 24
+                                        hod.)</small>
+                                </div>
+                            </li>
+                            <li class="contact-item-box">
+                                <div class="contact-icon-box">
+                                    <i class="bi bi-telephone-outbound"></i>
+                                </div>
+                                <div>
+                                    <span class="label">Telefon</span>
+                                    <a href="tel:+420606652000">+420 606 652 000</a>
+                                </div>
+                            </li>
+                        </ul>
+
+                        <div class="company-legal">
+                            <p>
+                                <strong>Byzo s.r.o.</strong><br>
+                                IČ: 17461413<br>
+                                Sídlo: Lýková 1160, Ládví, 251 68 Kamenice
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Right: Calendly Booking -->
+                    <div class="calendly-booking-card">
+                        <div class="calendly-badge">Bonus pro vás</div>
+                        <h2>Objednat si schůzku online</h2>
+                        <div style="font-size: 1.8rem; font-weight: 800; color: var(--color-btn); margin-bottom: 1rem;">
+                            30 minut zdarma</div>
+                        <p>Rezervujte si čas, který vám vyhovuje, a my vám ukážeme, jak Byzo zrychlí vaši práci.</p>
+                        <a href="https://calendly.com/" target="_blank" class="btn btn-primary"
+                            style="width: 100%; max-width: 300px;">Rezervovat termín</a>
+                        <div style="margin-top: 1.5rem; color: #999; font-size: 0.9rem;">
+                            <i class="bi bi-check2-circle"></i> Bezplatně a nezávazně
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container footer-container">
+            <div class="footer-cta">
+                <h3>Objednat si schůzku online</h3>
+                <p class="highlight">30 minut zdarma</p>
+                <a href="https://calendly.com/" target="_blank" class="btn btn-secondary">Rezervovat termín <i
+                        class="bi bi-calendar-check"></i></a>
+            </div>
+
+            <div class="footer-contacts">
+                <h3>Kontakty</h3>
+                <ul class="contact-list">
+                    <li>
+                        <span class="label">Obchod:</span>
+                        <a href="mailto:filip.jokes@byzo.cz">filip.jokes@byzo.cz</a>
+                    </li>
+                    <li>
+                        <span class="label">Podpora:</span>
+                        <a href="mailto:info@byzo.cz">info@byzo.cz</a> <span class="note">(odpovídáme do 24 hod.)</span>
+                    </li>
+                    <li>
+                        <span class="label">Telefon:</span>
+                        <a href="tel:+420606652000">+420 606 652 000</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom text-center">
+            <p>&copy; 2026 Byzo s.r.o. | Vytvořeno s důrazem na řemeslo.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

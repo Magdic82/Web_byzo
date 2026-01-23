@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="cs">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Časté dotazy | Vše o programu pro řemeslníky Byzo</title>
+    <meta name="description"
+        content="Hledáte odpovědi? Přečtěte si nejčastější dotazy o složitosti programu, úspoře času, cenících nebo kontrole plateb v systému Byzo.">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/jpeg" href="Fotky/favicon_byzo.jpg">
+
+    <style>
+        .faq-section {
+            padding: 2rem 0 6rem 0;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: white;
+            border-radius: 12px;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+            border: 1px solid #eee;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .faq-item:hover {
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+            border-color: var(--color-secondary);
+        }
+
+        .faq-question {
+            padding: 1.5rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-family: 'Outfit', sans-serif;
+            font-weight: 600;
+            font-size: 1.15rem;
+            color: var(--color-text);
+            background: white;
+            border: none;
+            width: 100%;
+            text-align: left;
+        }
+
+        .faq-question:hover {
+            color: var(--color-btn);
+        }
+
+        .faq-icon {
+            transition: transform 0.3s ease;
+            color: var(--color-btn);
+            font-size: 1.2rem;
+        }
+
+        .faq-answer {
+            padding: 0 1.5rem;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s cubic-bezier(0, 1, 0, 1), padding 0.3s ease;
+            color: #555;
+            line-height: 1.7;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 300px;
+            /* Approximate max height */
+            padding-bottom: 1.5rem;
+            transition: max-height 0.5s ease-in-out;
+        }
+
+        .faq-item.active .faq-icon {
+            transform: rotate(180deg);
+        }
+
+        .faq-item.active .faq-question {
+            color: var(--color-btn);
+        }
+    </style>
+    <!-- Structured Data (FAQ) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Jak je program složitý?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Program je navržený přímo pro řemeslníky, ne pro IT specialisty. Většinu věcí uděláte na pár kliknutí. Navíc dostanete krátké návody na většinu základních funkcí."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Kolik času mi to reálně ušetří oproti Wordu, Excelu nebo papírům?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ušetříte přibližně 2–4 pracovní dny měsíčně. Nemusíte přepisovat položky, hledat ceny ani ručně dělat nabídky a faktury."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Musím mít připravené ceníky a šablony hned od začátku?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Nemusíte. Můžete začít klidně s jednou zakázkou. Postupně si vytvoříte vlastní šablony podle práce, kterou děláte nejčastěji, a systém se vám začne čím dál víc zrychlovat. Máme také v plánu vytvořit knihovnu šablon podle řemesla a typu práce."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Jak to funguje s mými vlastními slevami u velkoobchodů?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Každý má u dodavatelů jiné slevy a s tím počítáme. Ceny v systému slouží hlavně pro rychlou nabídku zákazníkovi. Skutečný nákup pak probíhá u vašeho velkoobchodu, kde se uplatní vaše interní sleva jako váš zisk na materiálu."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Dokážu z toho opravdu rychle poslat nabídku zákazníkovi?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ano. Díky šablonám a ceníkům je nabídka hotová často během pár minut. Z nabídky pak jedním klikem uděláte dodací list i fakturu – bez přepisování."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Co když je každá zakázka jiná a nejde podle šablony?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Šablona je jen výchozí bod. Každou zakázku si upravíte podle reality – přidáte, smažete, změníte ceny nebo práci. Program nenahrazuje vaši zkušenost, jen vám šetří čas."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Umí systém hlídat, jestli mi zákazník zaplatil?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ano. Vidíte přehled zaplacených i nezaplacených faktur a systém vás upozorní, když je něco po splatnosti."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Můžu vystavit zálohovou i konečnou fakturu?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Samozřejmě. Systém umí zálohové, dílčí i konečné faktury. Vše je propojené se zakázkou, takže nic nepřepisujete."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Potřebuji sklad, když beru materiál přímo na zakázku?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Nepotřebujete. Sklad je dobrovolný. Větshina řemeslníků materiál bere přímo na konkrétní zakázku a systém s tím počítá."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Co když si s něčím nebudu vědět rady – je podpora v češtině?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ano. Celý program je vyvinutý v Čechách. I podpora je v češtině a mluvíte s lidmi, kteří rozumí řemeslu. Když něco nejde, pomůžeme vám to nastavit nebo vysvětlit krok za krokem."
+          }
+        }
+      ]
+    }
+    </script>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="site-header">
+        <div class="container header-container">
+            <a href="index.html" class="logo-link">
+                <img src="Fotky/logo_byzo.jpg" alt="Byzo Logo" class="logo-img">
+            </a>
+
+            <nav class="main-nav">
+                <ul class="nav-list">
+                    <li><a href="index.html" class="nav-link">Domů</a></li>
+                    <li><a href="funkce.html" class="nav-link">Funkce</a></li>
+                    <li><a href="priklad-z-praxe.html" class="nav-link">Příklad z praxe</a></li>
+                    <li><a href="cenik.html" class="nav-link">Ceník</a></li>
+                    <li><a href="jak-zacit.html" class="nav-link">Jak začít</a></li>
+                    <li><a href="caste-dotazy.html" class="nav-link active">Časté dotazy</a></li>
+                    <li><a href="o-nas.html" class="nav-link">O nás</a></li>
+                    <li><a href="kontakt.html" class="nav-link btn-nav">Kontakt</a></li>
+                </ul>
+            </nav>
+
+            <button class="mobile-menu-btn" aria-label="Otevřít menu" aria-expanded="false">
+                <i class="bi bi-list"></i>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <!-- Page Header -->
+        <section class="hero-section" style="padding: 4rem 0 2rem 0; min-height: auto;">
+            <div class="container text-center">
+                <h1>Časté <span class="text-highlight">dotazy</span></h1>
+                <p class="hero-subtitle">Vše, co potřebujete vědět o systému Byzo</p>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="faq-section">
+            <div class="container">
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        1. Jak je program složitý?
+                        <i class="bi bi-arrow-down faq-icon"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Program je navržený přímo pro řemeslníky, ne pro IT specialisty. Většinu věcí uděláte na pár
+                            kliknutí. Navíc dostanete krátké návody na většinu základních funkcí.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        2. Kolik času mi to reálně ušetří oproti Wordu, Excelu nebo papírům?
+                        <i class="bi bi-arrow-down faq-icon"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Ušetříte přibližně 2–4 pracovní dny měsíčně. Nemusíte přepisovat položky, hledat ceny ani
+                            ručně dělat nabídky a faktury.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        3. Musím mít připravené ceníky a šablony hned od začátku?
+                        <i class="bi bi-arrow-down faq-icon"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Nemusíte. Můžete začít klidně s jednou zakázkou. Postupně si vytvoříte vlastní šablony podle
+                            práce, kterou děláte nejčastěji, a systém se vám začne čím dál víc zrychlovat. Máme také v
+                            plánu vytvořit knihovnu šablon podle řemesla a typu práce. To by mělo práci dále zrychlovat.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        4. Jak to funguje s mými vlastními slevami u velkoobchodů?
+                        <i class="bi bi-arrow-down faq-icon"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Každý má u dodavatelů jiné slevy a s tím počítáme. Ceny v systému slouží hlavně pro rychlou
+                            nabídku zákazníkovi. Skutečný nákup pak probíhá u vašeho velkoobchodu, kde se uplatní vaše
+                            interní sleva jako váš zisk na materiálu. Vy tedy víte, kolik přesně jste vydělali na
+                            materiálu.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        5. Dokážu z toho opravdu rychle poslat nabídku zákazníkovi?
+                        <i class="bi bi-arrow-down faq-icon"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Ano. Díky šablonám a ceníkům je nabídka hotová často během pár minut. Z nabídky pak jedním
+                            klikem uděláte dodací list i fakturu – bez přepisování.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        6. Co když je každá zakázka jiná a nejde podle šablony?
+                        <i class="bi bi-arrow-down faq-icon"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Šablona je jen výchozí bod. Každou zakázku si upravíte podle reality – přidáte, smažete,
+                            změníte ceny nebo práci. Program nenahrazuje vaši zkušenost, jen vám šetří čas.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        7. Umí systém hlídat, jestli mi zákazník zaplatil?
+                        <i class="bi bi-arrow-down faq-icon"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Ano. Vidíte přehled zaplacených i nezaplacených faktur a systém vás upozorní, když je něco po
+                            splatnosti.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        8. Můžu vystavit zálohovou i konečnou fakturu?
+                        <i class="bi bi-arrow-down faq-icon"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Samozřejmě. Systém umí zálohové, dílčí i konečné faktury. Vše je propojené se zakázkou, takže
+                            nic nepřepisujete.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        9. Potřebuji sklad, když beru materiál přímo na zakázku?
+                        <i class="bi bi-arrow-down faq-icon"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Nepotřebujete. Sklad je dobrovolný. Většinu řemeslníků materiál bere přímo na konkrétní
+                            zakázku a systém s tím počítá.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        10. Co když si s něčím nebudu vědět rady – je podpora v češtině?
+                        <i class="bi bi-arrow-down faq-icon"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Ano. Celý program je vyvinutý v Čechách. I podpora je v češtině a mluvíte s lidmi, kteří
+                            rozumí řemeslu. Když něco nejde, pomůžeme vám to nastavit nebo vysvětlit krok za krokem.
+                            Případně se objednejte na online konzultaci <a href="kontakt.html">zde</a>.</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container footer-container">
+            <div class="footer-cta">
+                <h3>Objednat si schůzku online</h3>
+                <p class="highlight">30 minut zdarma</p>
+                <a href="https://calendly.com/" target="_blank" class="btn btn-secondary">Rezervovat termín <i
+                        class="bi bi-calendar-check"></i></a>
+            </div>
+
+            <div class="footer-contacts">
+                <h3>Kontakty</h3>
+                <ul class="contact-list">
+                    <li>
+                        <span class="label">Obchod:</span>
+                        <a href="mailto:filip.jokes@byzo.cz">filip.jokes@byzo.cz</a>
+                    </li>
+                    <li>
+                        <span class="label">Podpora:</span>
+                        <a href="mailto:info@byzo.cz">info@byzo.cz</a> <span class="note">(odpovídáme do 24 hod.)</span>
+                    </li>
+                    <li>
+                        <span class="label">Telefon:</span>
+                        <a href="tel:+420606652000">+420 606 652 000</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom text-center">
+            <p>&copy; 2026 Byzo s.r.o. | Vytvořeno s důrazem na řemeslo.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Simple script for accordion functionality
+        document.querySelectorAll('.faq-question').forEach(button => {
+            button.addEventListener('click', () => {
+                const faqItem = button.parentElement;
+
+                // Toggle active class
+                faqItem.classList.toggle('active');
+
+                // Optional: Close others when one is opened (accordion style)
+                /*
+                document.querySelectorAll('.faq-item').forEach(item => {
+                    if (item !== faqItem) {
+                        item.classList.remove('active');
+                    }
+                });
+                */
+            });
+        });
+    </script>
+</body>
+
+</html>

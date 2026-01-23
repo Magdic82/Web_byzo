@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="cs">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jak začít s Byzo? | Postup zavedení systému ve firmě</title>
+    <meta name="description"
+        content="Jak probíhá zavedení Byzo do vaší firmy? Od získání přístupů až po nastavení profilu na míru a osobní zaškolení krok za krokem.">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/jpeg" href="Fotky/favicon_byzo.jpg">
+
+    <style>
+        .steps-container {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            padding: 2rem 0;
+        }
+
+        .step-card {
+            background: white;
+            border-radius: 16px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+            border: 1px solid #eee;
+            display: flex;
+            align-items: flex-start;
+            gap: 1.5rem;
+            transition: transform 0.3s ease;
+        }
+
+        .step-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--color-secondary);
+        }
+
+        .step-number {
+            background-color: var(--color-btn);
+            color: white;
+            font-size: 1.5rem;
+            font-weight: 700;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            box-shadow: 0 4px 10px rgba(78, 64, 174, 0.3);
+        }
+
+        .step-content h3 {
+            margin-top: 0.5rem;
+            font-size: 1.3rem;
+            color: var(--color-btn);
+        }
+
+        .step-content p {
+            color: #555;
+            margin-bottom: 0;
+        }
+
+        /* Connector line */
+        .steps-container::before {
+            content: '';
+            position: absolute;
+            top: 2rem;
+            bottom: 2rem;
+            left: 45px;
+            /* Adjust based on container padding and step-number width */
+            width: 2px;
+            background-color: var(--color-secondary);
+            z-index: -1;
+        }
+
+        @media (max-width: 768px) {
+            .steps-container::before {
+                left: 25px;
+                /* Adjust for mobile layout if needed */
+                display: none;
+                /* Hide line on mobile usually looks cleaner or needs layout tweak */
+            }
+
+            .step-card {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                gap: 1rem;
+            }
+
+            .step-content h3 {
+                margin-top: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="site-header">
+        <div class="container header-container">
+            <a href="index.html" class="logo-link">
+                <img src="Fotky/logo_byzo.jpg" alt="Byzo Logo" class="logo-img">
+            </a>
+
+            <nav class="main-nav">
+                <ul class="nav-list">
+                    <li><a href="index.html" class="nav-link">Domů</a></li>
+                    <li><a href="funkce.html" class="nav-link">Funkce</a></li>
+                    <li><a href="priklad-z-praxe.html" class="nav-link">Příklad z praxe</a></li>
+                    <li><a href="cenik.html" class="nav-link">Ceník</a></li>
+                    <li><a href="jak-zacit.html" class="nav-link active">Jak začít</a></li>
+                    <li><a href="caste-dotazy.html" class="nav-link">Časté dotazy</a></li>
+                    <li><a href="o-nas.html" class="nav-link">O nás</a></li>
+                    <li><a href="kontakt.html" class="nav-link btn-nav">Kontakt</a></li>
+                </ul>
+            </nav>
+
+            <button class="mobile-menu-btn" aria-label="Otevřít menu" aria-expanded="false">
+                <i class="bi bi-list"></i>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <!-- Page Header -->
+        <section class="hero-section" style="padding: 4rem 0 2rem 0; min-height: auto;">
+            <div class="container text-center">
+                <h1>Postup zavedení systému <span class="text-highlight">Byzo</span></h1>
+                <p class="hero-subtitle">Jak to bude probíhat po objednání?</p>
+            </div>
+        </section>
+
+        <!-- Steps Section -->
+        <section class="steps-section" style="padding: 2rem 0 6rem 0;">
+            <div class="container">
+                <div class="steps-container">
+
+                    <!-- Step 1 -->
+                    <div class="step-card">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h3>Přístupové údaje</h3>
+                            <p>Ihned po zakoupení nebo vyžádání zkušební verze vám dorazí do e-mailu přístupové údaje
+                                (přihlašovací jméno a heslo) do aplikace.</p>
+                        </div>
+                    </div>
+
+                    <!-- Step 2 -->
+                    <div class="step-card">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h3>Příprava profilu na míru</h3>
+                            <p>Profily připravujeme pro každého uživatele individuálně. Váš systém dostanete již
+                                nastavený, s nahranými ceníky vašich preferovaných dodavatelů a základními šablonami pro
+                                práci.</p>
+                        </div>
+                    </div>
+
+                    <!-- Step 3 -->
+                    <div class="step-card">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h3>Pomoc s nastavením</h3>
+                            <p>Nebudete v tom sami. K dispozici je vám úvodní prezentace a přímo v programu najdete
+                                instruktážní videa, která vysvětlují jednotlivé funkce.</p>
+                        </div>
+                    </div>
+
+                    <!-- Step 4 -->
+                    <div class="step-card">
+                        <div class="step-number">4</div>
+                        <div class="step-content">
+                            <h3>Osobní podpora a školení</h3>
+                            <p>Jsme k dispozici na telefonu a na online konzultacích. V případě potřeby počítáme i s
+                                online školením pro vás nebo vaše zaměstnance, abyste systém využívali naplno.</p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="text-center" style="margin-top: 3rem;">
+                    <a href="kontakt.html" class="btn btn-primary">Objednat konzultaci</a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container footer-container">
+            <div class="footer-cta">
+                <h3>Objednat si schůzku online</h3>
+                <p class="highlight">30 minut zdarma</p>
+                <a href="https://calendly.com/" target="_blank" class="btn btn-secondary">Rezervovat termín <i
+                        class="bi bi-calendar-check"></i></a>
+            </div>
+
+            <div class="footer-contacts">
+                <h3>Kontakty</h3>
+                <ul class="contact-list">
+                    <li>
+                        <span class="label">Obchod:</span>
+                        <a href="mailto:filip.jokes@byzo.cz">filip.jokes@byzo.cz</a>
+                    </li>
+                    <li>
+                        <span class="label">Podpora:</span>
+                        <a href="mailto:info@byzo.cz">info@byzo.cz</a> <span class="note">(odpovídáme do 24 hod.)</span>
+                    </li>
+                    <li>
+                        <span class="label">Telefon:</span>
+                        <a href="tel:+420606652000">+420 606 652 000</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom text-center">
+            <p>&copy; 2026 Byzo s.r.o. | Vytvořeno s důrazem na řemeslo.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

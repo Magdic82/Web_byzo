@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="cs">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ceník a tarify | Vyzkoušejte Byzo na 2 měsíce</title>
+    <meta name="description"
+        content="Přečtěte si náš ceník. Nabízíme zkušební verzi na 2 měsíce i výhodné roční a tříleté předplatné pro řemeslníky se slevou až 31 %.">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/jpeg" href="Fotky/favicon_byzo.jpg">
+
+    <style>
+        .pricing-section {
+            padding: 4rem 0 6rem 0;
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .pricing-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            border: 1px solid #eee;
+            transition: transform 0.3s ease;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        /* Trial Card Separate Layout */
+        .trial-container.full-width {
+            grid-column: 1 / -1;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 3rem;
+            margin-bottom: 2rem;
+        }
+
+        .pricing-card.trial-card-content {
+            flex: 1;
+            background-color: var(--color-light-bg);
+            border: 2px dashed var(--color-btn);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 2.5rem;
+        }
+
+        .trial-image-outside {
+            flex: 1;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .trial-image-outside img {
+            width: 100%;
+            max-width: 600px;
+            height: 450px;
+            object-fit: cover;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+            border: 8px solid white;
+            transform: rotate(2deg);
+            transition: transform 0.3s ease;
+        }
+
+        .trial-image-outside img:hover {
+            transform: scale(1.02) rotate(0deg);
+        }
+
+
+
+        .pricing-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+            border-color: var(--color-secondary);
+        }
+
+        .pricing-card.featured {
+            border: 2px solid var(--color-btn);
+            background: linear-gradient(to bottom, #fff, var(--color-light-bg));
+        }
+
+        .saving-badge {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background-color: #d1fae5;
+            color: #059669;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 700;
+        }
+
+        .saving-badge.high-value {
+            background-color: var(--color-btn);
+            color: white;
+        }
+
+        .plan-name {
+            font-size: 1.25rem;
+            color: #555;
+            margin-bottom: 1rem;
+            font-weight: 500;
+        }
+
+        .price {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--color-text);
+            margin-bottom: 0.5rem;
+        }
+
+        .price span {
+            font-size: 1rem;
+            color: #888;
+            font-weight: 400;
+        }
+
+        .features-list {
+            margin: 2rem 0;
+            flex-grow: 1;
+        }
+
+        .features-list li {
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #555;
+        }
+
+        .features-list li i {
+            color: var(--color-btn);
+        }
+
+        .trial-badge {
+            background-color: var(--color-secondary);
+            color: var(--color-btn);
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        @media (max-width: 992px) {
+            .pricing-section {
+                padding: 4rem 0 3rem 0;
+            }
+
+            .pricing-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+                margin-bottom: 3rem;
+            }
+
+            .trial-container.full-width {
+                flex-direction: column;
+            }
+
+            .pricing-card.trial-card-content {
+                width: 100%;
+                padding: 2.5rem 1.5rem 4rem 1.5rem;
+                max-height: none;
+                overflow: visible;
+            }
+
+            .pricing-card.trial-card-content .btn {
+                display: block;
+                width: 100%;
+                margin-top: 2rem;
+                box-sizing: border-box;
+                font-size: 1.15rem;
+            }
+
+            .trial-image-outside {
+                width: 100%;
+            }
+
+            .trial-image-outside img {
+                height: 260px;
+                width: auto;
+                max-width: 80%;
+                margin: 0 auto;
+                display: block;
+                transform: rotate(0deg);
+            }
+
+            .price {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="site-header">
+        <div class="container header-container">
+            <a href="index.html" class="logo-link">
+                <img src="Fotky/logo_byzo.jpg" alt="Byzo Logo" class="logo-img">
+            </a>
+
+            <nav class="main-nav">
+                <ul class="nav-list">
+                    <li><a href="index.html" class="nav-link">Domů</a></li>
+                    <li><a href="funkce.html" class="nav-link">Funkce</a></li>
+                    <li><a href="priklad-z-praxe.html" class="nav-link">Příklad z praxe</a></li>
+                    <li><a href="cenik.html" class="nav-link active">Ceník</a></li>
+                    <li><a href="jak-zacit.html" class="nav-link">Jak začít</a></li>
+                    <li><a href="caste-dotazy.html" class="nav-link">Časté dotazy</a></li>
+                    <li><a href="o-nas.html" class="nav-link">O nás</a></li>
+                    <li><a href="kontakt.html" class="nav-link btn-nav">Kontakt</a></li>
+                </ul>
+            </nav>
+
+            <button class="mobile-menu-btn" aria-label="Otevřít menu" aria-expanded="false">
+                <i class="bi bi-list"></i>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <!-- Page Header -->
+        <section class="hero-section" style="padding: 4rem 0 2rem 0; min-height: auto;">
+            <div class="container text-center">
+                <h1>Jednoduché a férové <span class="text-highlight">ceny</span></h1>
+                <p class="hero-subtitle">Vyberte si předplatné, které vám nejvíce vyhovuje</p>
+            </div>
+        </section>
+
+        <!-- Pricing Section -->
+        <section class="pricing-section">
+            <div class="container">
+                <div class="pricing-grid">
+
+                    <!-- Trial Option (Separate Layout) -->
+                    <div class="trial-container full-width">
+                        <div class="pricing-card trial-card-content">
+                            <div class="trial-badge">2 měsíce na zkoušku</div>
+                            <h3 class="plan-name">Chci vyzkoušet</h3>
+                            <div class="price">100 Kč <span>/ měsíc</span></div>
+                            <p style="color: #666; font-size: 0.9rem;">Cena platí po dobu prvních 2 měsíců.</p>
+
+                            <ul class="features-list">
+                                <li><i class="bi bi-check-circle-fill"></i> Všechny funkce systému</li>
+                                <li><i class="bi bi-check-circle-fill"></i> Bez závazků</li>
+                                <li><i class="bi bi-check-circle-fill"></i> Technická podpora</li>
+                            </ul>
+
+                            <a href="jak-zacit.html" class="btn btn-secondary">Začít zkoušet</a>
+                        </div>
+                        <div class="trial-image-outside">
+                            <img src="Fotky/remeslnici/remeslnik_byzo6.jpg" alt="Řemeslník používající Byzo" loading="lazy">
+                        </div>
+                    </div>
+
+                    <!-- Monthly Option -->
+                    <div class="pricing-card">
+                        <h3 class="plan-name">Chci platit měsíčně</h3>
+                        <div class="price">1.000 Kč <span>/ měsíc</span></div>
+                        <p style="color: #666; font-size: 0.9rem;">Flexibilní platba každý měsíc.</p>
+
+                        <ul class="features-list">
+                            <li><i class="bi bi-check-circle-fill"></i> Všechny funkce systému</li>
+                            <li><i class="bi bi-check-circle-fill"></i> Možnost kdykoliv zrušit</li>
+                            <li><i class="bi bi-check-circle-fill"></i> Pravidelné aktualizace</li>
+                            <li><i class="bi bi-check-circle-fill"></i> Technická podpora</li>
+                        </ul>
+
+                        <a href="jak-zacit.html" class="btn btn-secondary">Vybrat měsíční plán</a>
+                    </div>
+
+                    <!-- Yearly Option (Featured) -->
+                    <div class="pricing-card featured">
+                        <div class="saving-badge">Ušetříte 17 %</div>
+                        <h3 class="plan-name">Chci platit ročně</h3>
+                        <div class="price">10.000 Kč <span>/ rok</span></div>
+                        <p style="color: #666; font-size: 0.9rem;">To vychází na 833 Kč měsíčně.</p>
+
+                        <ul class="features-list">
+                            <li><i class="bi bi-check-circle-fill"></i> <strong>Všechny funkce systému</strong></li>
+                            <li><i class="bi bi-check-circle-fill"></i> <strong>2 měsíce zdarma</strong></li>
+                            <li><i class="bi bi-check-circle-fill"></i> Jednoduchá fakturace jednou za rok</li>
+                            <li><i class="bi bi-check-circle-fill"></i> Prioritní podpora</li>
+                        </ul>
+
+                        <a href="jak-zacit.html" class="btn btn-primary">Vybrat roční plán</a>
+                    </div>
+
+                    <!-- 3-Year Option -->
+                    <div class="pricing-card">
+                        <div class="saving-badge high-value">Ušetříte 31 %</div>
+                        <h3 class="plan-name">Na 3 roky</h3>
+                        <div class="price">25.000 Kč <span>/ 3 roky</span></div>
+                        <p style="color: #666; font-size: 0.9rem;">To vychází na pouhých 694 Kč měsíčně.</p>
+
+                        <ul class="features-list">
+                            <li><i class="bi bi-check-circle-fill"></i> Všechny funkce systému</li>
+                            <li><i class="bi bi-check-circle-fill"></i> Garance stálé ceny</li>
+                            <li><i class="bi bi-check-circle-fill"></i> Dlouhodobý klid od placení</li>
+                        </ul>
+
+                        <a href="jak-zacit.html" class="btn btn-secondary">Vybrat 3letý plán</a>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container footer-container">
+            <div class="footer-cta">
+                <h3>Objednat si schůzku online</h3>
+                <p class="highlight">30 minut zdarma</p>
+                <a href="https://calendly.com/" target="_blank" class="btn btn-secondary">Rezervovat termín <i
+                        class="bi bi-calendar-check"></i></a>
+            </div>
+
+            <div class="footer-contacts">
+                <h3>Kontakty</h3>
+                <ul class="contact-list">
+                    <li>
+                        <span class="label">Obchod:</span>
+                        <a href="mailto:filip.jokes@byzo.cz">filip.jokes@byzo.cz</a>
+                    </li>
+                    <li>
+                        <span class="label">Podpora:</span>
+                        <a href="mailto:info@byzo.cz">info@byzo.cz</a> <span class="note">(odpovídáme do 24 hod.)</span>
+                    </li>
+                    <li>
+                        <span class="label">Telefon:</span>
+                        <a href="tel:+420606652000">+420 606 652 000</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom text-center">
+            <p>&copy; 2026 Byzo s.r.o. | Vytvořeno s důrazem na řemeslo.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
