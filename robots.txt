@@ -1,0 +1,10 @@
+# robots.txt pro www.byzo.cz
+
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://www.byzo.cz/sitemap.xml
+
+# Zakázané soubory a složky
+Disallow: /404.html

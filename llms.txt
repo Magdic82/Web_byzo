@@ -1,0 +1,34 @@
+# Byzo
+
+> Byzo je jednoduchý software pro řemeslníky, který automatizuje papírování — nabídky, faktury a správu zakázek. Ušetří až 4 dny měsíčně.
+
+Byzo pomáhá řemeslníkům a malým firmám s administrativou. Umožňuje vytvářet cenové nabídky, vystavovat faktury a spravovat zakázky na jednom místě. Software je navržen tak, aby byl maximálně jednoduchý a nevyžadoval žádné technické znalosti.
+
+## Hlavní stránky
+
+- [Domů](https://www.byzo.cz/index.html): Úvodní stránka s přehledem produktu a jeho hlavních výhod
+- [Funkce](https://www.byzo.cz/funkce.html): Přehled funkcí softwaru — nabídky, faktury, správa zakázek
+- [Ceník](https://www.byzo.cz/cenik.html): Cenové plány a tarify
+- [Jak začít](https://www.byzo.cz/jak-zacit.html): Návod jak začít používat Byzo
+- [Příklad z praxe](https://www.byzo.cz/priklad-z-praxe.html): Reálný příklad využití softwaru řemeslníkem
+- [Časté dotazy](https://www.byzo.cz/caste-dotazy.html): Odpovědi na nejčastější otázky
+- [O nás](https://www.byzo.cz/o-nas.html): Informace o týmu za Byzo
+- [Kontakt](https://www.byzo.cz/kontakt.html): Kontaktní údaje
+
+## Pro koho je Byzo
+
+- Řemeslníci (instalatéři, elektrikáři, zedníci, truhláři, malíři...)
+- Malé stavební firmy
+- OSVČ v technických oborech
+
+## Klíčové funkce
+
+- **Cenové nabídky**: Vytvoření profesionální nabídky během pár minut
+- **Fakturace**: Automatické vystavování faktur ze zakázek
+- **Správa zakázek**: Přehled všech zakázek na jednom místě
+- **Šablony**: Předpřipravené šablony pro různé typy prací
+
+## Kontakt
+
+- Web: https://www.byzo.cz
+- Email: info@byzo.cz
