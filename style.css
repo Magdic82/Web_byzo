@@ -318,6 +318,16 @@ p {
     gap: 2rem;
 }
 
+.feature-card h2,
+.feature-card h3,
+.pricing-card h2,
+.pricing-card h3,
+.plan-name {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+    color: #222;
+}
+
 .feature-card {
     background: var(--color-light-bg);
     padding: 2rem;
@@ -400,6 +410,7 @@ p {
     font-size: 2rem;
 }
 
+.process-step h2,
 .process-step h3 {
     font-size: 1.1rem;
     font-weight: 600;
@@ -559,6 +570,7 @@ p {
     border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
+.footer-cta h2,
 .footer-cta h3 {
     color: white;
     font-size: 1.8rem;
@@ -571,6 +583,7 @@ p {
     margin-bottom: 1.5rem;
 }
 
+.footer-contacts h2,
 .footer-contacts h3 {
     color: white;
     border-bottom: 2px solid var(--color-btn);
@@ -589,7 +602,7 @@ p {
 }
 
 .contact-list .label {
-    color: #ddd;
+    color: #ffffff;
     font-weight: 400;
     min-width: 80px;
 }
@@ -605,7 +618,7 @@ p {
 
 .contact-list .note {
     font-size: 0.85rem;
-    color: #bbb;
+    color: #eeeeee;
     margin-left: 0.5rem;
 }
 
@@ -613,7 +626,7 @@ p {
     border-top: 1px solid rgba(255, 255, 255, 0.1);
     padding-top: 2rem;
     font-size: 0.9rem;
-    color: #bbb;
+    color: #eeeeee;
 }
 
 /* Responsive */
