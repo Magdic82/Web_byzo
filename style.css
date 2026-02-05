@@ -589,7 +589,7 @@ p {
 }
 
 .contact-list .label {
-    color: #aaa;
+    color: #ddd;
     font-weight: 400;
     min-width: 80px;
 }
@@ -605,7 +605,7 @@ p {
 
 .contact-list .note {
     font-size: 0.85rem;
-    color: #777;
+    color: #bbb;
     margin-left: 0.5rem;
 }
 
@@ -613,7 +613,7 @@ p {
     border-top: 1px solid rgba(255, 255, 255, 0.1);
     padding-top: 2rem;
     font-size: 0.9rem;
-    color: #777;
+    color: #bbb;
 }
 
 /* Responsive */
